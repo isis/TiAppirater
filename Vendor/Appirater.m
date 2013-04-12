@@ -63,6 +63,15 @@ static BOOL _usesAnimation = TRUE;
 static UIStatusBarStyle _statusBarStyle;
 static BOOL _modalOpen = false;
 
+NSBundle* getLangBundle() {
+    NSString *mainbundlePath = [[NSBundle mainBundle] resourcePath];
+    NSLog(@"mainbundlePath : %@" , mainbundlePath);
+    NSString *bundlePath = [mainbundlePath stringByAppendingString: @"/modules/de.marcelpociot.appirater/"];    
+    NSLog(@"path : %@" , bundlePath);
+    NSBundle *currentLangBundlePath = [[NSBundle alloc] initWithPath: bundlePath];
+    return currentLangBundlePath;
+}
+
 @interface Appirater ()
 - (BOOL)connectedToNetwork;
 + (Appirater*)sharedInstance;

@@ -60,19 +60,24 @@ extern NSString *const kAppiraterReminderRequestDate;
  This is the message your users will see once they've passed the day+launches
  threshold.
  */
-#define APPIRATER_LOCALIZED_MESSAGE     NSLocalizedStringFromTable(@"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!", @"AppiraterLocalizable", nil)
+ 
+NSBundle* getLangBundle() ;
+
+#define APPIRATER_MODULE_BUNDLE getLangBundle()
+
+#define APPIRATER_LOCALIZED_MESSAGE     NSLocalizedStringFromTableInBundle(@"If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!", @"AppiraterLocalizable", APPIRATER_MODULE_BUNDLE, nil)
 #define APPIRATER_MESSAGE				[NSString stringWithFormat:APPIRATER_LOCALIZED_MESSAGE, APPIRATER_APP_NAME]
 
 /*
  This is the title of the message alert that users will see.
  */
-#define APPIRATER_LOCALIZED_MESSAGE_TITLE   NSLocalizedStringFromTable(@"Rate %@", @"AppiraterLocalizable", nil)
+#define APPIRATER_LOCALIZED_MESSAGE_TITLE   NSLocalizedStringFromTableInBundle(@"Rate %@", @"AppiraterLocalizable", APPIRATER_MODULE_BUNDLE, nil)
 #define APPIRATER_MESSAGE_TITLE             [NSString stringWithFormat:APPIRATER_LOCALIZED_MESSAGE_TITLE, APPIRATER_APP_NAME]
 
 /*
  The text of the button that rejects reviewing the app.
  */
-#define APPIRATER_CANCEL_BUTTON			NSLocalizedStringFromTable(@"No, Thanks", @"AppiraterLocalizable", nil)
+#define APPIRATER_CANCEL_BUTTON			NSLocalizedStringFromTableInBundle(@"No, Thanks", @"AppiraterLocalizable", APPIRATER_MODULE_BUNDLE, nil)
 
 /*
  Text of button that will send user to app review page.
