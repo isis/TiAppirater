@@ -82,13 +82,13 @@ NSBundle* getLangBundle() ;
 /*
  Text of button that will send user to app review page.
  */
-#define APPIRATER_LOCALIZED_RATE_BUTTON NSLocalizedStringFromTable(@"Rate %@", @"AppiraterLocalizable", nil)
+#define APPIRATER_LOCALIZED_RATE_BUTTON NSLocalizedStringFromTableInBundle(@"Rate %@", @"AppiraterLocalizable", APPIRATER_MODULE_BUNDLE, nil)
 #define APPIRATER_RATE_BUTTON			[NSString stringWithFormat:APPIRATER_LOCALIZED_RATE_BUTTON, APPIRATER_APP_NAME]
 
 /*
  Text for button to remind the user to review later.
  */
-#define APPIRATER_RATE_LATER			NSLocalizedStringFromTable(@"Remind me later", @"AppiraterLocalizable", nil)
+#define APPIRATER_RATE_LATER			NSLocalizedStringFromTableInBundle(@"Remind me later", @"AppiraterLocalizable", APPIRATER_MODULE_BUNDLE, nil)
 
 @interface Appirater : NSObject <UIAlertViewDelegate, SKStoreProductViewControllerDelegate> {
 
